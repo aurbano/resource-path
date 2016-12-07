@@ -2,6 +2,7 @@
 
 [![Travis](https://img.shields.io/travis/aurbano/resource-path.svg?style=flat-square)](https://travis-ci.org/aurbano/resource-path)
 [![npm](https://img.shields.io/npm/v/resource-path.svg?style=flat-square)](https://www.npmjs.com/package/resource-path)
+[![Coveralls](https://img.shields.io/coveralls/aurbano/resource-path.svg)]()
 [![npm](https://img.shields.io/npm/dm/resource-path.svg)]()
 [![npm](https://img.shields.io/npm/l/resource-path.svg)]()
 
