@@ -1,0 +1,30 @@
+{
+  "name": "resource-path",
+  "version": "1.0.0",
+  "description": "Tiny module to generate resource paths for APIs",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aurbano/resource-path.git"
+  },
+  "keywords": [
+    "resource",
+    "api",
+    "path",
+    "url",
+    "uri",
+    "dynamic"
+  ],
+  "author": "Alejandro U. Alvarez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aurbano/resource-path/issues"
+  },
+  "homepage": "https://github.com/aurbano/resource-path#readme",
+  "devDependencies": {
+    "ava": "^0.17.0"
+  }
+}
