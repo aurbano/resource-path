@@ -3,7 +3,6 @@
 [![Travis](https://img.shields.io/travis/aurbano/resource-path.svg?style=flat-square)](https://travis-ci.org/aurbano/resource-path)
 [![npm](https://img.shields.io/npm/v/resource-path.svg?style=flat-square)](https://www.npmjs.com/package/resource-path)
 [![Coveralls](https://img.shields.io/coveralls/aurbano/resource-path.svg)](https://coveralls.io/github/aurbano/resource-path)
-[![npm](https://img.shields.io/npm/dm/resource-path.svg)](https://www.npmjs.com/package/resource-path)
 [![npm](https://img.shields.io/npm/l/resource-path.svg)](https://www.npmjs.com/package/resource-path)
 
 > Tiny module to generate resource paths for APIs, with zero dependencies
