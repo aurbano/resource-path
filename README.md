@@ -37,15 +37,15 @@ resource(input, params);
 
 Install:
 
-```
+```bash
 npm install --save resource-path
-// or if you prefer yarn
+# or if you prefer yarn
 yarn add resource-path
 ```
 
 Usage
 
-```
+```js
 import resource from 'resource-path';
 
 resource(path, [params]);
