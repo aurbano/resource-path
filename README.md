@@ -1,4 +1,4 @@
-# Resource Path
+# `/resource/:path`
 
 [![Travis](https://img.shields.io/travis/aurbano/resource-path.svg)](https://travis-ci.org/aurbano/resource-path)
 [![npm](https://img.shields.io/npm/v/resource-path.svg)](https://www.npmjs.com/package/resource-path)
