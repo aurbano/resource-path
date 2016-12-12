@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>/resource/:path by aurbano</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">/resource/:path</h1>
+      <h2 class="project-tagline">Tiny module to generate resource paths for APIs with zero dependencies</h2>
+      <a href="https://github.com/aurbano/resource-path" class="btn">View on GitHub</a>
+      <a href="https://github.com/aurbano/resource-path/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/aurbano/resource-path/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <p><a href="https://travis-ci.org/aurbano/resource-path"><img src="https://img.shields.io/travis/aurbano/resource-path.svg" alt="Travis"></a>
+<a href="https://www.npmjs.com/package/resource-path"><img src="https://img.shields.io/npm/v/resource-path.svg" alt="npm"></a>
+<a href="https://coveralls.io/github/aurbano/resource-path?branch=master"><img src="https://coveralls.io/repos/github/aurbano/resource-path/badge.svg?branch=master" alt="Coverage Status"></a>
+<a href="https://www.npmjs.com/package/resource-path"><img src="https://img.shields.io/npm/dm/resource-path.svg" alt="npm"></a>
+<a href="https://www.npmjs.com/package/resource-path"><img src="https://img.shields.io/npm/l/resource-path.svg" alt="npm"></a></p>
+
+<p>This module implements Angular's resource URL definition, so that you can easily interact with an API.</p>
+
+<p>Example:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">import</span> <span class="pl-smi">resource</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>resource-path<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">const</span> <span class="pl-c1">input</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>/path/to/resource/:id<span class="pl-pds">'</span></span>;
+<span class="pl-k">const</span> <span class="pl-c1">params</span> <span class="pl-k">=</span> {
+  id<span class="pl-k">:</span> <span class="pl-c1">123</span>
+};
+
+<span class="pl-en">resource</span>(input, params);
+<span class="pl-c">// Returns: /path/to/resource/123</span></pre></div>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">const</span> <span class="pl-c1">input</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>/path/to/resource/:id/something/:param2<span class="pl-pds">'</span></span>;
+<span class="pl-k">const</span> <span class="pl-c1">params</span> <span class="pl-k">=</span> {
+  id<span class="pl-k">:</span> <span class="pl-c1">123</span>
+};
+
+<span class="pl-en">resource</span>(input, params);
+<span class="pl-c">// Returns: /path/to/resource/123</span></pre></div>
+
+<h2>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting started</h2>
+
+<p>Install:</p>
+
+<div class="highlight highlight-source-shell"><pre>npm install --save resource-path
+<span class="pl-c"># or if you prefer yarn</span>
+yarn add resource-path</pre></div>
+
+<p>Usage</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">import</span> <span class="pl-smi">resource</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>resource-path<span class="pl-pds">'</span></span>;
+
+<span class="pl-en">resource</span>(path, [params]);</pre></div>
+
+<ul>
+<li>
+<code>path</code> <code>{string}</code> Is the path to the resource. Either a full URL or a relative path. It can contain identifiers in the form of <code>:identifier</code> in any part of the path.</li>
+<li>
+<code>params</code> <code>{Object}</code> An object with key/value pairs, where the keys are identifiers in the path, and the value is what will be replaced in it.</li>
+</ul>
+
+<p>The <code>resource</code> method will return the path, substituting the params whenever if finds an indentifier. As soon as it finds an identifier without a specified parameter it stops.This way you can define full API paths that are reusable.</p>
+
+<h2>
+<a id="testing" class="anchor" href="#testing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Testing</h2>
+
+<p>Tests are located in the <code>tests</code> folder, and are written with <code>ava</code>.</p>
+
+<h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing</h2>
+
+<p>Feel free to send any PR with new features, more test cases...</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>This project is licensed under the MIT License.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/aurbano/resource-path">/resource/:path</a> is maintained by <a href="https://github.com/aurbano">aurbano</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
