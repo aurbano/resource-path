@@ -1,7 +1,7 @@
 # Resource Path
 
-[![Travis](https://img.shields.io/travis/aurbano/resource-path.svg?style=flat-square)](https://travis-ci.org/aurbano/resource-path)
-[![npm](https://img.shields.io/npm/v/resource-path.svg?style=flat-square)](https://www.npmjs.com/package/resource-path)
+[![Travis](https://img.shields.io/travis/aurbano/resource-path.svg)](https://travis-ci.org/aurbano/resource-path)
+[![npm](https://img.shields.io/npm/v/resource-path.svg)](https://www.npmjs.com/package/resource-path)
 [![Coverage Status](https://coveralls.io/repos/github/aurbano/resource-path/badge.svg?branch=master)](https://coveralls.io/github/aurbano/resource-path?branch=master)
 [![npm](https://img.shields.io/npm/dm/resource-path.svg)](https://www.npmjs.com/package/resource-path)
 [![npm](https://img.shields.io/npm/l/resource-path.svg)](https://www.npmjs.com/package/resource-path)
