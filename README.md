@@ -68,3 +68,5 @@ Feel free to send any PR with new features, more test cases...
 ## License
  
 This project is licensed under the MIT License.
+
+[![Analytics](https://ga-beacon.appspot.com/UA-3181088-16/resource-path/readme)](https://github.com/aurbano)
