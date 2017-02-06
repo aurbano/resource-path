@@ -4,7 +4,8 @@
   "description": "Tiny module to generate resource paths for APIs",
   "main": "index.js",
   "scripts": {
-    "test": "nyc ava"
+    "test": "nyc ava",
+    "build": "babel -w src/ -d dist -s"
   },
   "repository": {
     "type": "git",
@@ -25,8 +26,23 @@
   },
   "homepage": "https://github.com/aurbano/resource-path#readme",
   "devDependencies": {
+    "@ava/babel-preset-stage-4": "^1.0.0",
     "ava": "^0.17.0",
+    "babel-cli": "^6.22.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-stage-0": "^6.22.0",
     "coveralls": "^2.11.15",
+    "del": "^2.2.2",
     "nyc": "^10.0.0"
+  },
+  "ava": {
+    "require": "babel-register",
+    "babel": "inherit"
+  },
+  "babel": {
+    "presets": [
+      "@ava/stage-4"
+    ]
   }
 }
