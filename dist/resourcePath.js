@@ -42,43 +42,47 @@ function encodeUriSegment(val) {
  * @param params Object containing {key: value} pairs for each parameter
  * @returns {*}
  */
-function resource(uri, params = {}) {
-  const PROTOCOL_AND_IPV6_REGEX = /^https?:\/\/\[[^\]]*][^/]*/;
+function resource(uri) {
+  var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
-  let url = uri;
-  const urlParams = {};
-  let encodedVal;
-  let protocolAndIpv6 = '';
+  var PROTOCOL_AND_IPV6_REGEX = /^https?:\/\/\[[^\]]*][^/]*/;
 
-  url.split(/\W/).forEach(param => {
+  var url = uri;
+  var urlParams = {};
+  var encodedVal = void 0;
+  var protocolAndIpv6 = '';
+
+  url.split(/\W/).forEach(function (param) {
     if (param === 'hasOwnProperty') {
       throw Error('badname', 'hasOwnProperty is not a valid parameter name.');
     }
-    if (!new RegExp('^\\d+$').test(param) && param && new RegExp(`(^|[^\\\\]):${param}(\\W|$)`).test(url)) {
+    if (!new RegExp('^\\d+$').test(param) && param && new RegExp('(^|[^\\\\]):' + param + '(\\W|$)').test(url)) {
       urlParams[param] = {
-        isQueryParamValue: new RegExp(`\\?.*=:${param}(?:\\W|$)`).test(url)
+        isQueryParamValue: new RegExp('\\?.*=:' + param + '(?:\\W|$)').test(url)
       };
     }
   });
 
   url = url.replace(/\\:/g, ':');
-  url = url.replace(PROTOCOL_AND_IPV6_REGEX, match => {
+  url = url.replace(PROTOCOL_AND_IPV6_REGEX, function (match) {
     protocolAndIpv6 = match;
     return '';
   });
 
-  Object.keys(urlParams).forEach(urlParam => {
-    const val = params[urlParam];
-    const paramInfo = urlParams[urlParam];
+  Object.keys(urlParams).forEach(function (urlParam) {
+    var val = params[urlParam];
+    var paramInfo = urlParams[urlParam];
     if (typeof val !== 'undefined' && val !== null) {
       if (paramInfo.isQueryParamValue) {
         encodedVal = encodeUriQuery(val, true);
       } else {
         encodedVal = encodeUriSegment(val);
       }
-      url = url.replace(new RegExp(`:${urlParam}(\\W|$)`, 'g'), (match, p1) => encodedVal + p1);
+      url = url.replace(new RegExp(':' + urlParam + '(\\W|$)', 'g'), function (match, p1) {
+        return encodedVal + p1;
+      });
     } else {
-      url = url.replace(new RegExp(`(/?):${urlParam}(\\W|$)`, 'g'), (match, leadingSlashes, tail) => {
+      url = url.replace(new RegExp('(/?):' + urlParam + '(\\W|$)', 'g'), function (match, leadingSlashes, tail) {
         if (tail.charAt(0) === '/') {
           return tail;
         }
